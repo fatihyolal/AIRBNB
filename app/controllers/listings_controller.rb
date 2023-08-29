@@ -3,6 +3,24 @@ class ListingsController < ApplicationController
     @listings = Listing.all
   end
 
+  def new
+    @listing = Listing.new
+  end
+
+  def show
+    @listing = Listing.find(params[:id])
+  end
+
+  def create
+    @listing = Listing.new(listing_params)
+
+    if @listing.save
+      redirect_to list_path(@listing)
+    else
+      render :new, status: :unproccessable_entity
+    end
+  end
+
   def edit
     @listing = Listing.find(params:id)
   end
@@ -27,6 +45,6 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.requiere(:listing).permit(:address, :price, :average_rating, :availability, :boat_description, :capacity)
+    params.require(:listing).permit(:address, :price, :average_rating, :availability, :boat_description, :capacity)
   end
 end
