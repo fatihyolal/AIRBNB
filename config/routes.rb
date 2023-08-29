@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "/listings/:id/edit", to: "listings#edit"
   delete "listings/:id", to: "listings#destroy"
   get "lisings/search", to: "listings#index"
-
+  #test
 
 
   resources :listings, only: %i[new show edit destroy create]
