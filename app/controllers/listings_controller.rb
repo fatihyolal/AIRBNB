@@ -1,5 +1,9 @@
 class ListingsController < ApplicationController
 
+  def index
+    @listings = Listing.all
+  end
+
   def edit
     @listing = Listing.find(params:id)
   end
