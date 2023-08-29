@@ -1,3 +1,5 @@
 class ListingsController < ApplicationController
-  @listings = Listing.all
+  def index
+   @listings = Listing.all
+  end
 end
