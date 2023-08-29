@@ -13,7 +13,6 @@
   address: Faker::Address.full_address,
   username: Faker::Internet.username,
   is_owner: [true, false].sample
-
   )
 
 end
@@ -24,7 +23,7 @@ end
   price:Faker::Commerce.price,
   average_rating: Faker::Number.between(from: 1, to: 10),
   availability: [true,false].sample,
-  boat_description:
+  boat_description:[]
   capacity:Faker::Number.between(from: 1, to: 10),
   user_id
   )
@@ -44,7 +43,7 @@ end
 
 20.times do
   Review.create (
-  comment: 
+  comment: []
   average_rating: Faker::Number.between(from: 1, to: 10),
   availability: [true,false].sample,
   boat_description:
