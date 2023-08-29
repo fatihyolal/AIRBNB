@@ -20,6 +20,9 @@ class ListingsController < ApplicationController
     redirect_to restaurants_path, status: :see_other
   end
 
+  def new
+    @listing = Listing.new
+  end
 
   private
 
