@@ -9,6 +9,5 @@ class User < ApplicationRecord
   has_many :invoices, through: :bookings
   has_many :reviews, through: :bookings
 
-  validates :name, presence: true
   validates :email, presence: true
 end
