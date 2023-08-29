@@ -5,8 +5,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get "/listings/:id/edit", to: "listings#edit"
+  delete "listing/:id", to: "listings#destroy"
+
+
+
   resources :listings, only: %i[new show edit destroy create]
   resources :bookings, only: %i[post new update edit] do
-    resources :reviews, only: %i[create new]
+  resources :reviews, only: %i[create new]
   end
 end
