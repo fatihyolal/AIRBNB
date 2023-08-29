@@ -9,5 +9,11 @@ class User < ApplicationRecord
   has_many :invoices, through: :bookings
   has_many :reviews, through: :bookings
 
+<<<<<<< HEAD
   validates :email, presence: true
+=======
+  # validates :name, presence: true
+
+  validates :email, presence: true, uniqueness: true
+>>>>>>> 961c249bcd4fdf87580f4c4bd3b48fd78ff452d5
 end
