@@ -15,4 +15,19 @@
       <h2 class="card-trip-pricing">£99.99</h2>
     </div>
   </div>
+  <% @listings.each do |listing| %>
+  <div class="card-trip">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= listing.title %></h2>
+          <p><%= listing.address %></p>
+        </div>
+        <div>
+          <h2 class="card-trip-pricing">£<%= listing.price %></h2>
+          <span><i class="fa-solid fa-person"></i></span><span><%= listing.capacity %></span>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
