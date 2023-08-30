@@ -20,11 +20,11 @@ end
 
 puts "listings are being created........."
 20.times do
-  Listing.create!(address:Faker::Address.with_locale("it") { Faker::Address.full_address },
+  Listing.create!(address: ["Moll de La Barceloneta, 1, 08039 Barcelona, Spain", "1 Blaža Jovanovića, Tivat 85320, Montenegro", "Via della Marina, 07021 Arzachena SS, Italy"].sample,
   price:Faker::Commerce.price,
   average_rating: Faker::Number.between(from: 1, to: 10),
   image_url:["https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2948&q=80","https://media.cntraveller.com/photos/633411e9d68dee18a8b96eae/16:9/w_2560%2Cc_limit/four%2520seasons%2520yacht-sept22-pr4.jpg","https://majesty.gulfcraftinc.com/hubfs/Majesty%2062%20(redesigned)%20-%20New%20Images%20-%20April%202022/Exteriors/Majesty%2062%20-%20Profile%20(1)-1.jpeg","https://www.luxyachts.com/media/HomePage/Alegre-underway-hero-image.jpg"].sample,
-  boat_description:["nice",'very good'].sample,
+  boat_description:["Large and modern yacht with all the facilities you could want!",'Top of the range super yacht, everything you could want and more!'].sample,
   capacity:Faker::Number.between(from: 1, to: 10),
   user:User.take,
   title:Faker::Company.name

@@ -9,6 +9,11 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    @marker = [{
+      lat: @listing.latitude,
+      lng: @listing.longitude
+    }]
+
   end
 
   def create
