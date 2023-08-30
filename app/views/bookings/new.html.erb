@@ -1,0 +1,10 @@
+<h1>Book <%= @listing.title %></h1>
+
+<%= simple_form_for [@listing, @booking] do |f| %>
+  <%= f.input :start_date, as: :date %>
+  <%= f.input :end_date, as: :date %>
+
+  <%= f.submit 'Book Listing'%>
+<% end %>
+
+<%= link_to 'Back', listing_path(@listing)%>

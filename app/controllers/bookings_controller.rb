@@ -4,13 +4,17 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def create
     @listing = Listing.find(params[:listing_id])
     @booking = @listing.bookings.new(booking_params)
     @booking.user = current_user
 
     if @booking.save
-      redirect_to booking_path(@booking), notice: "Booking was successfully made."
+      redirect_to listing_booking_path(@listing, @booking), notice: "Booking was successfully made."
     else
       render :new, status: :unprocessable_entity
     end
