@@ -1,0 +1,20 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/21/2017/01/DSC46461.jpg);">
+  <div class="container">
+    <h1>Add a new listing</h1>
+    <p>Enter the details of your new yacht listing to find customers!</p>
+  </div>
+</div>
+<div class="d-flex justify-content-center" style="width: 100%;">
+  <div class="form-container">
+    <%= simple_form_for @listing do |f| %>
+      <%= f.input :title %>
+      <%= f.input :address %>
+      <%= f.input :price %>
+      <%= f.input :address %>
+      <%= f.input :boat_description %>
+      <%= f.input :capacity %>
+      <%= f.input :image_url %>
+      <%= f.button :submit, class: "btn btn-secondary"%>
+    <% end %>
+  </div>
+</div>

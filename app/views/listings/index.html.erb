@@ -5,29 +5,21 @@
   </div>
 </div>
 <div class="cards">
-  <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Title here</h2>
-        <p>Short description here!</p>
-      </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
-    </div>
-  </div>
   <% @listings.each do |listing| %>
-  <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= listing.title %></h2>
-          <p><%= listing.address %></p>
+    <%= link_to listing_path(listing), style: "text-decoration: none;" do %>
+      <div class="card-trip">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= listing.title %></h2>
+              <p><%= listing.address %></p>
+            </div>
+            <div>
+              <h2 class="card-trip-pricing">£<%= listing.price %></h2>
+              <span class="card-text"><i class="fa-solid fa-person"></i></span><span class="card-text"><%= listing.capacity %></span>
+            </div>
+          </div>
         </div>
-        <div>
-          <h2 class="card-trip-pricing">£<%= listing.price %></h2>
-          <span><i class="fa-solid fa-person"></i></span><span><%= listing.capacity %></span>
-        </div>
-      </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
