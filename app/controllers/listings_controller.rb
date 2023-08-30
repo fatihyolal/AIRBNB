@@ -38,7 +38,6 @@ class ListingsController < ApplicationController
     redirect_to restaurants_path, status: :see_other
   end
 
-
   private
 
   def listing_params
