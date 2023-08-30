@@ -1,1 +1,36 @@
-<%= @booking.listing.title %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @booking.listing.image_url %>);">
+  <div class="container">
+    <h1><%= @booking.listing.title %></h1>
+    <p><%= @booking.listing.boat_description %></p>
+    <p style="color: #66ff00;"><i class="fa-solid fa-check"></i> Booked</p>
+  </div>
+</div>
+<div class="d-flex p-3 justify-content-center">
+  <div class="card m-3 p-2">
+    <h2 class=""> Yacht details:</h2>
+    <div>
+      <% @booking.listing.average_rating.to_i.times do %>
+        <i class="fa-solid fa-star"></i>
+      <% end %>
+      <% (10 - @booking.listing.average_rating.to_i).times do %>
+        <i class="fa-regular fa-star"></i>
+      <% end %>
+    </div>
+    <div>
+      <span class="card-text"><i class="fa-solid fa-location-dot"></i></span><span class="card-text"> <%= @booking.listing.address %></span>
+    </div>
+    <div>
+      <span class="card-text"><i class="fa-solid fa-person"></i></span><span class="card-text"> <%= @booking.listing.capacity %></span>
+    </div>
+    <div>
+      <span class="card-text"><i class="fa-solid fa-sterling-sign"></i></span><span class="card-text"> <%= @booking.listing.price %> per night</span>
+    </div>
+  </div>
+  <div class="card m-3 p-2">
+    <h2>Booking details:</h2>
+    <h4>start of stay:</h4>
+    <p><%= @booking.start_date %></p>
+     <h4>End of stay:</h4>
+    <p><%= @booking.end_date %></p>
+  </div>
+</div>
