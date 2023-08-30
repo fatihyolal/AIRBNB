@@ -1,4 +1,39 @@
-<%=  link_to "Delete",
-listing_path(@listing),
-data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @listing.image_url %>);">
+  <div class="container">
+    <h1><%= @listing.title %></h1>
+    <p><%= @listing.boat_description %></p>
+  </div>
+</div>
+<div class="d-flex p-3 justify-content-between">
+  <div>
+    <div class="card m-3 p-2">
+      <h2 class="">Details:</h2>
+      <div>
+        <% @listing.average_rating.to_i.times do %>
+          <i class="fa-solid fa-star"></i>
+        <% end %>
+        <% (10 - @listing.average_rating.to_i).times do %>
+          <i class="fa-regular fa-star"></i>
+        <% end %>
+      </div>
+      <div>
+        <span class="card-text"><i class="fa-solid fa-location-dot"></i></span><span class="card-text"> <%= @listing.address %></span>
+      </div>
+      <div>
+        <span class="card-text"><i class="fa-solid fa-person"></i></span><span class="card-text"> <%= @listing.capacity %></span>
+      </div>
+      <div>
+        <span class="card-text"><i class="fa-solid fa-sterling-sign"></i></span><span class="card-text"> <%= @listing.price %> per night</span>
+      </div>
+    </div>
+    <div style="width: 100%;" class="d-flex justify-content-end">
+      <%= link_to "Book now!",new_booking_path, Class: "btn btn-secondary m-3 btn-lg", style: "width: 100%;" %>
+    </div>
+  </div>
+  <div style="width: 100%; height: 400px;"
+    data-controller="map"
+    data-map-markers-value="<%= @marker.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+</div>
+
