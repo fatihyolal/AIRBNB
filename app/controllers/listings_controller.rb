@@ -17,7 +17,7 @@ class ListingsController < ApplicationController
     if @listing.save
       redirect_to list_path(@listing)
     else
-      render :new, status: :unproccessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -42,6 +42,6 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:address, :price, :average_rating, :availability, :boat_description, :capacity)
+    params.require(:listing).permit(:address, :price, :average_rating, :availability, :boat_description, :capacity, :image_url, :title)
   end
 end
