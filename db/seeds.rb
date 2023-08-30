@@ -19,7 +19,7 @@ end
 
 
 20.times do
-  Listing.create (address:Faker::Address.with_locale("it") { Faker::Address.full_address },
+  Listing.create (address: Faker::Address.with_locale("it") { Faker::Address.full_address },
   price:Faker::Commerce.price,
   average_rating: Faker::Number.between(from: 1, to: 10),
   availability: [true,false].sample,
