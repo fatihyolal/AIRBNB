@@ -18,11 +18,11 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
-
+    @listing.user = current_user
     if @listing.save
-      redirect_to list_path(@listing)
+      redirect_to listing_path(@listing)
     else
-      render :new, status: :unproccessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -36,16 +36,17 @@ class ListingsController < ApplicationController
 
     redirect_to listing_path(@listing)
   end
+
   def destroy
     @listing = Listing.find(params[:id])
     @listing.destroy
 
-    redirect_to restaurants_path, status: :see_other
+    redirect_to root_path, status: :see_other
   end
 
   private
 
   def listing_params
-    params.require(:listing).permit(:address, :price, :average_rating, :availability, :boat_description, :capacity)
+    params.require(:listing).permit(:address, :price, :average_rating, :availability, :boat_description, :capacity, :image_url, :title)
   end
 end
