@@ -17,7 +17,6 @@ class ListingsController < ApplicationController
       lat: @listing.latitude,
       lng: @listing.longitude
     }]
-
   end
 
   def create

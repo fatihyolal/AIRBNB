@@ -1,19 +1,17 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.yachtsidegroup.com/upload4mail/yachtside/k/w/l/c/u/KWLcu_4.jpg);">
-  <div class="container">
+  <div class="container" style="width: 900px;">
     <h1>Rent out your yacht, on your terms!</h1>
     <p>Make money when your not using your yacht, without the hastle with Yatchhub.</p>
-    <div class="row justify-content-center">
-      <div class = "col-sm-8 my-3">
+      <div class = "">
         <%= form_with url: root_path, method: :get, class: "d-flex" do %>
           <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "search a place or the starting date to see bookings"
+            placeholder: "Enter the name of a yacht, location or the starting date of your trip..."
           %>
-          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-          <% end %>
+          <%= submit_tag "Search", name: "", class: "btn btn-secondary" %>
+        <% end %>
       </div>
-    </div>
   </div>
 </div>
 <div class="cards">

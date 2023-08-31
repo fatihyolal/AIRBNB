@@ -1,0 +1,12 @@
+<h1> REVIEWS </h1>
+
+<% if @reviews.any? %>
+  <% @reviews.each do |review| %>
+   <div>
+    <p>Comment: <%= review.comment %> </p>
+    <p>Rating: <%= review.rating %> </p>
+   </div>
+   <% end %>
+<% else %>
+<p>No reviews!</p>
+<% end %>

@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  get "/listings/:id/edit", to: "listings#edit"
+  get "/listings/:id/edit", to: "listings#edit", as: :listing_edit
+  patch "listings/:id", to: "listings#update"
   delete "listings/:id", to: "listings#destroy"
   get "lisings/search", to: "listings#index"
   get "bookings", to: "bookings#index"
@@ -13,8 +14,9 @@ Rails.application.routes.draw do
 
 
   resources :listings, only: %i[new show edit destroy create] do
-    resources :bookings, only: %i[create new update ]
+    resources :bookings, only: %i[create new]
     # resources :reviews, only: %i[create new]
   end
-  resources :bookings, only:%i[show]
+  resources :bookings, only:%i[show update]
+
 end

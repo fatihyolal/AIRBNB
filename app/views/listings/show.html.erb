@@ -30,6 +30,9 @@
     <div style="width: 100%;" class="d-flex justify-content-end">
       <%= link_to "Book now!",new_listing_booking_path(@listing), Class: "btn btn-secondary m-3 btn-lg", style: "width: 100%;" %>
     </div>
+    <div style="width: 100%;" class="d-flex justify-content-end">
+      <%= link_to "Edit this yacht",listing_edit_path(@listing), Class: "btn btn-secondary m-3 btn-lg", style: "width: 100%;" %>
+    </div>
   </div>
   <div style="width: 100%; height: 400px;"
     data-controller="map"
