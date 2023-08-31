@@ -23,18 +23,16 @@
       <div>
         <span class="card-text"><i class="fa-solid fa-person fa-lg"></i></span><span class="card-text"> <%= @listing.capacity %></span>
       </div>
-      <div>
-        <span class="card-text"><i class="fa-solid fa-sterling-sign fa-lg"></i></span><span class="card-text"> <%= @listing.price %> per night</span>
+      <div class="d-flex justify-content-between">
+        <div><span class="card-text"><i class="fa-solid fa-sterling-sign fa-lg"></i></span><span class="card-text"> <%= @listing.price %> per night</span></div>
+        <%= link_to "Edit",listing_edit_path(@listing), Class: "btn btn-secondary", style: "width: 60px;" %>
       </div>
     </div>
     <div style="width: 100%;" class="d-flex justify-content-end">
       <%= link_to "Book now!",new_listing_booking_path(@listing), Class: "btn btn-secondary m-3 btn-lg", style: "width: 100%;" %>
     </div>
     <div style="width: 100%;" class="d-flex justify-content-end">
-      <%= link_to "Edit this yacht",listing_edit_path(@listing), Class: "btn btn-secondary m-3 btn-lg", style: "width: 100%;" %>
-    </div>
-       <div style="width: 100%;" class="d-flex justify-content-end">
-      <%= link_to "Read the reviews",listing_reviews_path(@listing), Class: "btn btn-secondary m-3 btn-lg", style: "width: 100%;" %>
+      <%= link_to "Read the reviews",listing_reviews_path(@listing), Class: "btn btn-light m-3 btn-lg", style: "width: 100%;" %>
     </div>
   </div>
   <div style="width: 100%; height: 400px;"
