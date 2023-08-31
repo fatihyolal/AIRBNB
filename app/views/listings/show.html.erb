@@ -7,24 +7,24 @@
 </div>
 <div class="d-flex p-3 justify-content-between">
   <div>
-    <div class="card m-3 p-2">
+    <div class="card mx-3 p-2" style="width: 280px;">
       <h2 class="">Details:</h2>
       <div>
         <% @listing.average_rating.to_i.times do %>
-          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star fa-lg"></i>
         <% end %>
         <% (10 - @listing.average_rating.to_i).times do %>
-          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star fa-lg"></i>
         <% end %>
       </div>
       <div>
-        <span class="card-text"><i class="fa-solid fa-location-dot"></i></span><span class="card-text"> <%= @listing.address %></span>
+        <span class="card-text"><i class="fa-solid fa-location-dot fa-lg"></i></span><span class="card-text"> <%= @listing.address %></span>
       </div>
       <div>
-        <span class="card-text"><i class="fa-solid fa-person"></i></span><span class="card-text"> <%= @listing.capacity %></span>
+        <span class="card-text"><i class="fa-solid fa-person fa-lg"></i></span><span class="card-text"> <%= @listing.capacity %></span>
       </div>
       <div>
-        <span class="card-text"><i class="fa-solid fa-sterling-sign"></i></span><span class="card-text"> <%= @listing.price %> per night</span>
+        <span class="card-text"><i class="fa-solid fa-sterling-sign fa-lg"></i></span><span class="card-text"> <%= @listing.price %> per night</span>
       </div>
     </div>
     <div style="width: 100%;" class="d-flex justify-content-end">
@@ -32,6 +32,9 @@
     </div>
     <div style="width: 100%;" class="d-flex justify-content-end">
       <%= link_to "Edit this yacht",listing_edit_path(@listing), Class: "btn btn-secondary m-3 btn-lg", style: "width: 100%;" %>
+    </div>
+       <div style="width: 100%;" class="d-flex justify-content-end">
+      <%= link_to "Read the reviews",listing_reviews_path(@listing), Class: "btn btn-secondary m-3 btn-lg", style: "width: 100%;" %>
     </div>
   </div>
   <div style="width: 100%; height: 400px;"
