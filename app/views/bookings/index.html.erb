@@ -1,10 +1,14 @@
-<div class="cards">
+<div class="cards my">
 <% @bookings.each do |booking| %>
     <%= link_to booking_path(booking), style: "text-decoration: none;" do %>
+
+
       <div class="card-trip">
+
           <img src= <%= booking.listing.image_url %> />
           <div class="card-trip-infos">
             <div>
+
               <h2><%= booking.listing.title %></h2>
               <p><%= booking.listing.address %></p>
             </div>
