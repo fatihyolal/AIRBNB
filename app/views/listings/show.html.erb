@@ -25,7 +25,9 @@
       </div>
       <div class="d-flex justify-content-between">
         <div><span class="card-text"><i class="fa-solid fa-sterling-sign fa-lg"></i></span><span class="card-text"> <%= @listing.price %> per night</span></div>
-        <%= link_to "Edit",listing_edit_path(@listing), Class: "btn btn-secondary", style: "width: 60px;" %>
+        <% if @listing.user_id == current_user.id %>
+          <%= link_to "Edit",listing_edit_path(@listing), Class: "btn btn-secondary", style: "width: 60px;" %>
+        <% end %>
       </div>
     </div>
     <div style="width: 100%;" class="d-flex justify-content-end">
