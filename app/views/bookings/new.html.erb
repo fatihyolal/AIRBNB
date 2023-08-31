@@ -1,16 +1,13 @@
-<div class="container" style="min-height: 82vh;">
-  <div class="d-flex justify-content-center" style="width: 100%;">
-    <div class="form-container">
-      <h1>Book <%= @listing.title %></h1>
 
-      <%= simple_form_for [@listing, @booking] do |f| %>
-        <%= f.input :start_date, as: :date %>
-        <%= f.input :end_date, as: :date %>
-      <div class="d-flex justify-content-between" style="width: 100%;">
-        <%= link_to 'Back', listing_path(@listing), class: "btn btn-light btn-lg"%>
-        <%= f.submit 'Book', class: "btn btn-secondary btn-lg"%>
-      </div>
-      <% end %>
-    </div>
-  </div>
-</div>
+
+<h1>Book <%= @listing.title %></h1>
+
+<%= simple_form_for [@listing, @booking], data: {controller: "flatpickr"} do |f| %>
+
+  <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
+  <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" } } %>
+
+  <%= f.submit 'Book Listing'%>
+<% end %>
+
+<%= link_to 'Back', listing_path(@listing)%>
