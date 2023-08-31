@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :invoices, through: :bookings
   has_many :reviews, through: :bookings
+  has_many :bookings_as_owner, through: :listings, source: :bookings
 
   # validates :name, presence: true
 

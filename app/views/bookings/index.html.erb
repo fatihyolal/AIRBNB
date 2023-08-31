@@ -1,0 +1,27 @@
+<div class="cards">
+<% @bookings.each do |booking| %>
+    <%= link_to booking_path(booking), style: "text-decoration: none;" do %>
+      <div class="card-trip">
+          <img src= <%= booking.listing.image_url %> />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= booking.listing.title %></h2>
+              <p><%= booking.listing.address %></p>
+            </div>
+            <div>
+              <h2 class="card-trip-pricing">£<%= booking.listing.price %></h2>
+              <span class="card-text"><i class="fa-solid fa-person"></i></span><span class="card-text"><%= booking.listing.capacity %></span>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  <% end %>
+
+
+
+
+
+
+
+
+</div>
