@@ -1,0 +1,25 @@
+<div class="container d-flex flex-column align-items-center">
+  <h1 class="p-3 m-0"> REVIEWS </h1>
+  <% if @reviews.any? %>
+  <div class="row row-cols-3 mb-3">
+    <% @reviews.each do |review| %>
+    <div class="col">
+      <div class="review-card">
+        <div>
+            <% review.rating.to_i.times do %>
+              <i class="fa-solid fa-star fa-lg"></i>
+            <% end %>
+            <% (10 - review.rating.to_i).times do %>
+              <i class="fa-regular fa-star fa-lg"></i>
+            <% end %>
+          </div>
+        <p><i class="fa-solid fa-quote-left fa-lg"></i> <%= review.comment %> </p>
+        <p><i class="fa-solid fa-envelope fa-lg"></i> <%= User.find(review.booking.user_id).email %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <% else %>
+  <p>No reviews!</p>
+  <% end %>
+</div>

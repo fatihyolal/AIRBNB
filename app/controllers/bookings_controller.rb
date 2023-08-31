@@ -8,6 +8,11 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
+  def index
+  @bookings = current_user.bookings
+  @owner_bookings = current_user.bookings_as_owner
+  end
+
   def create
     @listing = Listing.find(params[:listing_id])
     @booking = @listing.bookings.new(booking_params)
@@ -20,7 +25,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  
 
   private
 
