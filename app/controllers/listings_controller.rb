@@ -18,6 +18,7 @@ class ListingsController < ApplicationController
       lng: @listing.longitude
     }]
 
+    @reviews = @listing.reviews
   end
 
   def create
