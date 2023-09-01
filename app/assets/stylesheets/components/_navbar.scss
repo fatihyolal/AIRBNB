@@ -9,10 +9,65 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+
 }
 
 .navbar-lewagon h1 {
   margin: 0px;
-  font-size: 34px;
-  font-family: 'Cinzel', serif;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  color: #3cf;
+
+}
+
+button{
+font-family:'Quicksand', sans-serif;
+ }
+
+.btn-1{
+
+margin-left: 10px;
+border-radius: 5px;
+border: none;
+background-color: #F4F4F4;
+
+}
+
+.btn-1:hover{
+border-radius: 5px;
+border: lightblue solid 1px;
+background-color: #F4F4F4;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+.btn-2{
+  margin-left: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #F4F4F4;
+
+
+}
+
+.btn-2:hover{
+  border-radius: 5px;
+  border: lightblue solid 1px;
+  background-color: #F4F4F4;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+
+.btn-3{
+  margin-left: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #F4F4F4;
+  }
+
+.btn-3:hover{
+  border-radius: 5px;
+  border: lightblue solid 1px;
+  background-color: #F4F4F4;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
