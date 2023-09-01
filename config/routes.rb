@@ -14,10 +14,10 @@ Rails.application.routes.draw do
   "listings/:listing_id/"
   resources :listings, only: %i[new show edit destroy create] do
     resources :bookings, only: %i[create new update show]
-    resources :reviews, only: %i[index]
+    resources :reviews, only: %i[index create]
   end
 
   resources :bookings, only: %i[index show update destroy] do
-    resources :reviews, only: %i[new create]
+    resources :reviews, only: %i[new ]
   end
 end
