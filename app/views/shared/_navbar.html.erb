@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
     <div class="d-flex align-items-center">
-      <i class="fa-solid fa-anchor fa-lg"></i>
+      <i class="fas fa-anchor fa-lg" style="color: #00ccff;"></i>
       <h1>Yachthub</h1>
     </div>
     <% end %>
@@ -15,17 +15,25 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "My Bookings", bookings_path, class: "nav-link" %>
+            <button  class="btn-1">
+            <%= link_to  "My Bookings", bookings_path, class: "nav-link" %>
+            </button>
           </li>
           <li class="nav-item">
+            <button class="btn-2">
             <%= link_to "New listing", new_listing_path, class: "nav-link" %>
+            </button>
           </li>
           <li class="nav-item">
-          <%= link_to "log out", destroy_user_session_path, class: "nav-link", data: {turbo_method: :delete}%>
+         <button class="btn-3">
+         <%= link_to "Log out", destroy_user_session_path, class: "nav-link", data: {turbo_method: :delete}%>
+         </button>
           </li>
         <% else %>
           <li class="nav-item">
+           <button>
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+           </button>
           </li>
         <% end %>
       </ul>
