@@ -1,7 +1,12 @@
-<h1>Create a New Review</h1>
 
-<%= simple_form_for([@booking.listing, @review]) do |f| %>
-  <%= f.input :comment, label: 'Comment' %>
-  <%= f.input :rating, label: 'Rating' %>
-  <%= f.submit 'Submit Review', class: 'btn btn-primary' %>
-<% end %>
+
+<div class="container d-flex flex-column align-items-center" style="height: 82vh;">
+<h1>Create a New Review</h1>
+  <div class="form-container">
+    <%= simple_form_for([@booking.listing, @review]) do |f| %>
+      <%= f.input :comment, label: 'Comment' %>
+      <%= f.input :rating, label: 'Rating' %>
+      <%= f.submit 'Submit Review', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
