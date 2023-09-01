@@ -15,10 +15,32 @@
   </div>
 </div>
 <div class="cards">
-  <% @listings.each do |listing| %>
+  <% @listings.each_with_index do |listing, index| %>
     <%= link_to listing_path(listing), style: "text-decoration: none;" do %>
       <div class="card-trip">
-          <img src= <%= listing.image_url %> />
+          <div id="carouselExampleIndicators<%= index %>" class="carousel slide">
+            <div class="carousel-inner">
+            <% listing.photos.each do |photo| %>
+              <% if photo == listing.photos.first %>
+                <div class="carousel-item active">
+                  <%= cl_image_tag(photo.key, class: "index-image d-block w-100") %>
+                </div>
+              <% else %>
+                <div class="carousel-item">
+                  <%= cl_image_tag(photo.key, class: "index-image d-block w-100") %>
+                </div>
+              <% end %>
+            <% end %>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators<%= index %>" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators<%= index %>" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
           <div class="card-trip-infos">
             <div>
               <h2><%= listing.title %></h2>
