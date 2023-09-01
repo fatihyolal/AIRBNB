@@ -1,0 +1,19 @@
+.show-banner {
+  position: absolute;
+  top: 400px;
+  left: 50px;
+}
+.show-banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.show-banner p {
+  font-size: 28px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}

@@ -8,15 +8,17 @@ Rails.application.routes.draw do
   get "/listings/:id/edit", to: "listings#edit", as: :listing_edit
   patch "listings/:id", to: "listings#update"
   delete "listings/:id", to: "listings#destroy"
-  get "listings/search", to: "listings#index"
-  get "bookings", to: "bookings#index"
+  get "lisings/search", to: "listings#index"
   #test
 
-
+  "listings/:listing_id/"
   resources :listings, only: %i[new show edit destroy create] do
     resources :bookings, only: %i[create new update show]
-    resources :reviews, only: %i[create new index update show]
+    resources :reviews, only: %i[index create]
   end
-  resources :bookings, only:%i[show update]
-  
+
+  resources :bookings, only: %i[index show update destroy] do
+    resources :reviews, only: %i[new ]
+  end
+
 end

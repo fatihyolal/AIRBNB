@@ -10,7 +10,9 @@ class BookingsController < ApplicationController
 
   def index
   @bookings = current_user.bookings
+  @bookings = @bookings.order(start_date: :desc)
   @owner_bookings = current_user.bookings_as_owner
+
   end
 
   def create
@@ -23,6 +25,12 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path, status: :see_other
   end
 
 
