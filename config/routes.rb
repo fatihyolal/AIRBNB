@@ -18,5 +18,5 @@ Rails.application.routes.draw do
     resources :reviews, only: %i[create new index update show]
   end
   resources :bookings, only:%i[show update]
-
+  
 end

@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-  has_many_attached :photo
+  has_many_attached :photos
 
 
   belongs_to :user
