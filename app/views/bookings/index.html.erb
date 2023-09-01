@@ -1,11 +1,32 @@
 <div class="cards my">
-<% @bookings.each do |booking| %>
+<% @bookings.each_with_index do |booking, index| %>
     <%= link_to booking_path(booking), style: "text-decoration: none;" do %>
 
 
       <div class="card-trip">
-
-          <img src= <%= booking.listing.image_url %> />
+          <div id="carouselExampleIndicators<%= index %>" class="carousel slide">
+            <div class="carousel-inner">
+            <% booking.listing.photos.each do |photo| %>
+              <% if photo == booking.listing.photos.first %>
+                <div class="carousel-item active">
+                  <%= cl_image_tag(photo.key, class: "index-image d-block w-100") %>
+                </div>
+              <% else %>
+                <div class="carousel-item">
+                  <%= cl_image_tag(photo.key, class: "index-image d-block w-100") %>
+                </div>
+              <% end %>
+            <% end %>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators<%= index %>" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators<%= index %>" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
           <div class="card-trip-infos">
             <div>
 
